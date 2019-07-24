@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LearnScrollView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mlk-Lw-EMh">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oVH-ne-4EN">
+                                        <rect key="frame" x="16" y="16" width="382" height="128"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="Zre-Oz-vLc"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHh-dE-OU3">
+                                        <rect key="frame" x="16" y="160" width="382" height="933.5"/>
+                                        <mutableString key="text">
+Add Recording
+1. Contains a button to start recording user voice input, during recording, these algorithm runs:
+    1. App checks for the pacing of the user input by checking WPM (Words Per Minute)
+    2. App checks for the filler words contained within the user input
+    3. App checks for the intonation used within the user input
+2. Contains a button to pause the recording activity. The app stops the input session and stops the running algorithm until user chose to continue the recording.
+3. Contains a button to continue a paused recording. The app continues the paused recording and runs the algorithm to check user input again.
+4. Contains a button to stop the recording and transition into the result screen. Stops all algorithm and get the result of the algorithm to present in the Result screen.
+----------
+Result
+1. Contains a button to playback the recorded audio
+2. Contains a collection view to display the result of the algorithm for the corresponding recording. There are 3 cells in the collection view:
+    1. Cell 1: contains the result of the user’s pacing. Contains:
+        1. A brief comment of the user’s pacing depending on the result
+        2. The pacing result of the user’s input
+        3. An indicator giving visual of the user’s current result with the suggested result range
+    2. Cell 2: contains the result for the user’s filler words. Contains:
+        1. A list of filler words said during the input of the recording and the count of each filler word
+        2. A total count of all filler words
+    3. Cell 3: contains the result of the user’s intonation,
+        1. Haven’t found the right way to visualise data
+</mutableString>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="oVH-ne-4EN" firstAttribute="leading" secondItem="mlk-Lw-EMh" secondAttribute="leading" constant="16" id="8FD-yi-lsO"/>
+                                    <constraint firstItem="oVH-ne-4EN" firstAttribute="top" secondItem="mlk-Lw-EMh" secondAttribute="top" constant="16" id="Pjg-e3-cx3"/>
+                                    <constraint firstAttribute="trailing" secondItem="oVH-ne-4EN" secondAttribute="trailing" constant="16" id="VmK-5q-Hcy"/>
+                                    <constraint firstItem="oVH-ne-4EN" firstAttribute="centerX" secondItem="mlk-Lw-EMh" secondAttribute="centerX" id="bAP-KA-cRp"/>
+                                    <constraint firstAttribute="bottom" secondItem="KHh-dE-OU3" secondAttribute="bottom" constant="16" id="dQ9-k0-hje"/>
+                                    <constraint firstAttribute="trailing" secondItem="KHh-dE-OU3" secondAttribute="trailing" constant="16" id="gTN-Wu-SGY"/>
+                                    <constraint firstItem="KHh-dE-OU3" firstAttribute="top" secondItem="oVH-ne-4EN" secondAttribute="bottom" constant="16" id="iik-LR-H8f"/>
+                                    <constraint firstItem="KHh-dE-OU3" firstAttribute="leading" secondItem="mlk-Lw-EMh" secondAttribute="leading" constant="16" id="un5-Yb-icR"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mlk-Lw-EMh" secondAttribute="trailing" id="GH6-CO-wfM"/>
+                            <constraint firstItem="mlk-Lw-EMh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="OJz-Sl-XS7"/>
+                            <constraint firstItem="mlk-Lw-EMh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jp7-DR-Kcf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mlk-Lw-EMh" secondAttribute="bottom" id="obi-Rz-ZdK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
+        </scene>
+    </scenes>
+</document>
